@@ -16,21 +16,24 @@ game_continue = True
 
 while game_continue:
     guess = int(input("Make a guess: "))
-    print(f"You have {easy_tries_remaining} tries remaining.")
     if guess < RANDOM_NUMBER:
         print("Too low.")
         print("Guess again.")
         if difficulty == 'easy':
             easy_tries_remaining -= 1
+            print(f"You have {easy_tries_remaining} tries remaining.")
         else:
             hard_tries_remaining -= 1
+            print(f"You have {hard_tries_remaining} tries remaining.")
     elif guess > RANDOM_NUMBER:
         print("Too high.")
         print("Guess again.")
         if difficulty == 'easy':
             easy_tries_remaining -= 1
+            print(f"You have {easy_tries_remaining} tries remaining.")
         else:
             hard_tries_remaining -= 1
+            print(f"You have {hard_tries_remaining} tries remaining.")
     elif guess == RANDOM_NUMBER:
         print(f"You got it! The correct number was {RANDOM_NUMBER}.")
         game_continue = False
